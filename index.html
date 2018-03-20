@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://fonts.googleapis.com/css?family=Barlow:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+		 <link rel="stylesheet" href="dist/css/app.css">
+	</head>
+	<body  class="bg">
+		<header>
+			<div class="bar bar4"></div>
+			<div class="bar bar3"></div>
+			<div class="bar bar2"></div>
+			<div class="bar bar1"></div>
+			<img class="marta-logo" src="dist/img/marta-logo.png">
+			<div id="wrapper">
+  				<div id="parallelogram"></div>
+				<div class="weather  ">
+					<img src="dist/img/sun.png">
+					<span>62</span>
+				</div>
+				<div class="time">
+					<span></span>
+				</div>
+				<div class="arrival active">
+					<div class="arrival-title">
+						<p>ARRIVAL</p>
+					</div>
+					<div class="north">
+						<p>N</p>
+						<p>N</p>
+					</div>
+					<div class="arrival-time">
+						<p> 3 min</p>
+						<p> 6 min</p>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section class="page home-page active">
+			<h1>Tap your breeze card below,</h1>
+			<p>or touch the screen if you don't have one</p>
+		</section>
+		<section class="page start-page">
+			<h2 class="start-question"></h2>
+			<div>
+				<div id="box-yes" class="box-y-n ">Yes</div>
+				<div id="box-no" class="box-y-n">No</div>
+			</div>
+		</section>
+		<section class="page recommend-page">
+			<h2>We recommend you buy a <span class="recommendation"></span>.</h2>
+			<div>
+			<div class="r-box box-buy"></div>
+			<div class="r-box box-alternative"></div>
+		</div>
+		</section>
+		<section class="page ticket-page ">
+			<h2>There are a few types of tickets.</h2>
+			<p>Choose the option that best suits your travel.</p>
+			<div class="three-box">
+				<div id="ticket-oneway" class="box-ticketType"><p>One Way</p></div>
+				
+
+				<div id="ticket-roundtrip" class="box-ticketType"><p>Roundtrip</p></div>
+				
+
+				<div id="ticket-oneday" class="box-ticketType"><p>One Day</p></div>
+				
+			</div>
+			<div class="three-box">
+				<div id="text-oneway" class="answer"><p></p></div>
+				<div id="text-roundtrip" class="answer"><p></p></div>
+				<div id="text-oneday" class="answer"><p></p></div>
+			</div>
+		</section>
+		<section class="page breeze-page ">
+			<h2>Your breeze card balance:</h2>
+			<p>4.50</p>
+			<div class="first-row">
+				<div id="breeze-load" class="box-breeze">Load Card</div>
+				<div id="breeze-parking" class="box-breeze">Parking</div>
+			</div>
+			<div class="second-row">
+				<div id="add-trips" class="box-addType">Add Trips</div>
+
+				<div id="add-days" class="box-addType">Add Days</div>
+
+				<div id="add-money" class="box-addType">Add Money</div>
+			</div>
+			<div class="answer-row">
+				<div id="text-trips" class="answer"></div>
+				<div id="text-days" class="answer"></div>
+				<div id="text-money" class="answer"></div>
+
+
+
+			</div>
+
+
+		</section>
+
+		<div id="vuecalculator">
+			<section class="page addmoney-page ">
+				<div class="left-column">
+					<p>How much money do you want to add?</p>
+					<span>${{formattedCashAdd}}</span>
+				</div>
+				<div class="right-column calculator">
+					<div>
+						<div @click="calcButtonPressed" class="calc-btn">1</div>
+						<div @click="calcButtonPressed" class="calc-btn">2</div>
+						<div @click="calcButtonPressed" class="calc-btn">3</div>
+					</div>
+					<div>
+						<div @click="calcButtonPressed" class="calc-btn">4</div>
+						<div @click="calcButtonPressed" class="calc-btn">5</div>
+						<div @click="calcButtonPressed" class="calc-btn">6</div>
+					</div>
+
+					<div>
+						<div @click="calcButtonPressed" class="calc-btn">7</div>
+						<div @click="calcButtonPressed" class="calc-btn">8</div>
+						<div @click="calcButtonPressed" class="calc-btn">9</div>
+					</div>
+
+					<div>
+						<div @click="calcButtonPressed" class="calc-btn">0</div>
+						<div @click="emptyCashAdd" id="clear" class="calc-btn">clear</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="page calc-pay-page">
+				<h2>Please insert cash, debit, credit card or use ApplePay.</h2>
+				<p>You're adding <span class="this"></span><span class="that"></span><span class="additional-text"></span></p>
+				<div class="pay-container">
+					<div class="total">Total: <span>${{formattedCashAdd}}</span></div>
+					<div class="inserted">Inserted: <span>$0.00</span></div>
+				</div>
+			</section>	
+		</div>
+
+		<div id="vueapp">
+
+			<section  class=" page howmany-page ">
+				<h2 class="ticketType-title">How many <span class="ticketType"></span> tickets do you want to buy?</h2>
+				<h2 class="breezeType-title">How many <span class="addType"></span> do you want to add?</h2>
+
+				<div id="counter">
+					<button class="counter-btn" @click="decrementValue">-</button>
+					<div class="counter-number">{{counter}}</div>
+					<button class="counter-btn" @click="incrementValue">+</button>
+				</div>
+				<div class="total">Total: <span>${{totalPrice.toFixed(2)}}</span></div>
+			</section>
+
+			<section class="page pay-page">
+				<h2>Please insert cash, debit, credit card or use ApplePay.</h2>
+				<p>You're buying <span class="this">{{counter}}</span><span class="that"></span><span class="additional-text"></span></p>
+				<div class="pay-container">
+					<div class="total">Total: <span>${{totalPrice.toFixed(2)}}</span></div>
+					<div class="inserted">Inserted: <span>$0.00</span></div>
+				</div>
+			</section>
+
+		</div>
+
+		<section class="page confirmation-page ">
+			<div>
+				<img id="checkbox" src="dist/img/logo.png">
+				<img id="qr-code" src="dist/img/questionmark.png">
+			</div>
+			<div class="confirm-text-container">
+				<h1>Payment Confirmed</h1>
+				<h2>Breeze Card or ticket purchases will be dispensed shortly.</h2>
+				<p>For a full schedule, trip planner, and additional offers, download out app, Marta On the Go from the Apple or Google Play store.</p>
+			</div>
+			<div>
+				<img id="marta-map" src="dist/img/marta_map.png">
+			</div>
+		</section>
+
+		<footer>
+			<div class="question"></div>
+			<div class="display-text active"></div>
+			<div class="corner-parallelogram ">
+				<p></p>
+			</div>
+			<div class="language active"></div>
+		</footer>
+
+		<script src="node_modules/moment/moment.js"></script>
+		<script src="node_modules/weather.js/dist/weather.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	 	<script src="dist/js/app.js"></script>
+	</body>
+</html>
