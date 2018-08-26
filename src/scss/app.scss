@@ -215,6 +215,9 @@ h2{
 				align-items: center;
 				margin: 25px 60px;
 				transition: .3s;
+				cursor: pointer;
+
+
 
 			}
 			.counter-number{
@@ -265,6 +268,7 @@ h2{
 				justify-content: center;
 				align-items: center;
 				transition: .3s;
+				cursor: pointer;
 
 			}
 			.answer{
@@ -274,6 +278,7 @@ h2{
 				width: 240px;
 				height: 100px;
 				margin: 20px;
+				cursor: pointer;
 			}
 		}
 	}
@@ -304,6 +309,8 @@ h2{
 		justify-content: center;
 		align-items: center;
 		transition: .3s;
+		cursor: pointer;
+
 
 	}
 	.second-row{
@@ -324,6 +331,8 @@ h2{
 		justify-content: center;
 		align-items: center;
 		transition: .3s;
+		cursor: pointer;
+
 
 	}
 	.answer-row{
@@ -341,6 +350,8 @@ h2{
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			cursor: pointer;
+
 		}
 	}
 } 
@@ -400,7 +411,13 @@ h2{
 		}
 	}
 } 
+.box-y-n, 
+.r-box, 
+.home-page h1, 
+.home-page p {
+	cursor: pointer;
 
+}
 .addmoney-page{
 	display: none;
 	&.active{
@@ -438,10 +455,14 @@ h2{
 			margin: 10px;
 			font-size: 1rem;
 			transition: .3s;
+			cursor: pointer;
+
 
 		}
 		#clear{
 			width: 172px;
+			cursor: pointer;
+
 
 		}
 	}
@@ -599,6 +620,8 @@ footer{
 			height: 80px;
 			background-size: contain;
 			background-repeat: no-repeat;
+			cursor: pointer;
+
 
 			p{
 				position: absolute;
